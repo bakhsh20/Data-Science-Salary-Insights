@@ -30,7 +30,23 @@ I used the MySQL connector extension for Python to connect to my RDBMS in MySQL 
 With the data now in my MySQL server, I made a series of queries that provided me with insights about the data. The following section will present those queries along with my analysis. 
 
 # Analysis 
-![Overall dashboard created in PowerBI"](/images/overall_insights.png "Data Salary Insights Dashboard")
+![Overall dashboard created in PowerBI](/images/overall_insights.png "Data Salary Insights Dashboard")
+
+This screenshot shows the entire PowerBI dashboard that I created. I will be going through each of these graphs individually and showing the SQL commands that corresponded with the graph and what questions I wanted to answer with each.
+
+# What is the average salary based on residence? 
+
+![Avg salary by employee residence](/images/salary_by_residence.png "Bar graph of salaries based off residence")
+
+SQL Command:
+<code>
+SELECT employee_residence, AVG(convert_to_USD(salary, salary_currency)) AS avg_salary
+FROM dsstats.dsstatstable
+GROUP BY employee_residence
+ORDER BY avg_salary DESC
+LIMIT 10;
+</code>
+
 
 
 
