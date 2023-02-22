@@ -30,8 +30,7 @@ I used the MySQL connector extension for Python to connect to my RDBMS in MySQL 
 With the data now in my MySQL server, I made a series of queries that provided me with insights about the data. The following section will present those queries along with my analysis. 
 
 # Analysis 
-
-
+![Overall dashboard created in PowerBI"](/images/overall_insights.png "Data Salary Insights Dashboard")
 
 
 
