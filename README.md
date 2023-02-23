@@ -31,8 +31,7 @@ With the data now in my MySQL server, I made a series of queries that provided m
 
 In the data set it can be noticed that the salaries were in different currencies. In order to analyze the data accurately, I created a function in MySQL to convert all the currencies into USD. This could of been easily done in Python but I was interested in better understanding SQL functions therefore I chose to do it in MySQL. The code is shown below. 
 
-<code>
-  CREATE DEFINER=`root`@`localhost` FUNCTION `convert_to_USD`(curr_num INT, curr_type VARCHAR(4)) RETURNS decimal(10,2)
+<code>CREATE DEFINER=`root`@`localhost` FUNCTION `convert_to_USD`(curr_num INT, curr_type VARCHAR(4)) RETURNS decimal(10,2)
     READS SQL DATA
     DETERMINISTIC
 BEGIN
@@ -57,8 +56,7 @@ BEGIN
     ELSE SET s = curr_num;
     END IF;
 RETURN s;
-END
-</code>
+END</code>
 
 # Analysis 
 ![Overall dashboard created in PowerBI](/images/overall_insights.png "Data Salary Insights Dashboard")
@@ -71,13 +69,11 @@ This screenshot shows the entire PowerBI dashboard that I created. I will be goi
 
 SQL Command: SQL code find the average salary in USD of the top 10 countries and orders it from least to greatest based off the average salary. 
 
-<code>
-SELECT employee_residence, AVG(convert_to_USD(salary, salary_currency)) AS avg_salary
+<code>SELECT employee_residence, AVG(convert_to_USD(salary, salary_currency)) AS avg_salary
 FROM dsstats.dsstatstable
 GROUP BY employee_residence
 ORDER BY avg_salary DESC
-LIMIT 10;
-</code>
+LIMIT 10;</code>
 
 In the Top 10 countries, the **greatest** salary is **Malaysia** with an average salary of **200,000 USD**. The **least** is **Jersey** with an average salary of **100,000** USD. It is determined that the top 10 countries provide a salary that is well about the averages for these nations, making these countries highly desirable for individuals who are in the field of Data Science. 
 
