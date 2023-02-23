@@ -49,7 +49,7 @@ GROUP BY job_title
 ORDER BY max_salary DESC
 LIMIT 10;
 
--- What is the average salary by experience? How many job were there for these jobs? 
+-- What is the average salary by experience?
 SELECT experience, AVG(convert_to_USD(salary, salary_currency)) AS avg_salary
 FROM dsstats.dsstatstable
 GROUP BY experience
