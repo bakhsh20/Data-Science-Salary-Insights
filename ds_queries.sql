@@ -67,8 +67,8 @@ SELECT employee_residence, COUNT(employee_residence)
 FROM dsstats.dsstatstable
 GROUP BY employee_residence;
 
--- Percentage of jobs based off experience
-SELECT experience, (COUNT(experience) / 607 ) AS percent_jobs
+-- Percentage of jobs based off experience and their average salaries
+SELECT experience, (COUNT(experience) / 607 ) AS percent_jobs, AVG(convert_to_USD(salary, salary_currency)) AS avg_salary
 FROM dsstats.dsstatstable
 GROUP BY experience; 
 
