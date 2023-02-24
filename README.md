@@ -59,7 +59,7 @@ RETURN s;
 END</code>
 
 # Data Analysis and Visualization
-![Overall dashboard created in PowerBI](/images/overall_insights_new.png)
+![Overall dashboard created in PowerBI](/images/dashboard.png)
 
 This screenshot shows the entire PowerBI dashboard that I created. I will be going through each of these graphs individually and showing the SQL commands that corresponded with the graph and what questions I wanted to answer with each.
 
